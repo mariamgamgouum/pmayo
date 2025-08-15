@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Penyo</title>
+    <style>
+        
+        .question-image {
+            width: 200px;  
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px; 
+            transform: scale(1.1);
+        } 
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fae1dd;
+            font-family: 'Arial', sans-serif;
+            background-image: url('assets/bg.jfif');
+            background-repeat: no-repeat;      
+            background-size: cover;            
+            background-position: center;
+        }
+
+        .question-container {
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 25px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #f08080;
+            color: white;
+        }
+        button:hover {
+            background-color: #dc5b5b;
+        }
+        .hidden {
+            display: none;
+        }
+
+        #anniversaryInput {
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #f08080;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        .error-message {
+            color: #dc5b5b;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        h1{
+            font-size: 37px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="question-container">
+        <img src="assets\susi.png" alt="susi" class="question-image">
+        <h1>are you my penny?</h1>
+        <div class="buttons">
+            <button onclick="showAnniversaryInput()">Yes</button>
+            <button id="noBtn" onmouseover="moveButton()">No</button>
+        </div>
+
+        <div id="anniversaryBox" class="hidden">
+            <img src="assets\susi2.png" alt="susi2" class="question-image">
+            <h1>if you're so sure, enter our anniversary</h1>
+            <input type="text" id="anniversaryInput" placeholder="(dd/mm/yyyy)" />
+            <button onclick="checkAnniversary()">Submit</button>
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+
+    </div>
+
+    <script>
+        function moveButton() {
+            const btn = document.getElementById('noBtn');
+            btn.style.position = 'absolute';
+            btn.style.left = Math.random() * (window.innerWidth - btn.offsetWidth) + 'px';
+            btn.style.top = Math.random() * (window.innerHeight - btn.offsetHeight) + 'px';
+        }
+
+        function showAnniversaryInput() {
+            document.querySelector('.question-image').style.display = 'none';
+            document.querySelector('h1:first-of-type').style.display = 'none';
+            document.querySelector('.buttons').style.display = 'none';
+            document.getElementById('anniversaryBox').classList.remove('hidden');
+        }
+
+        function checkAnniversary() {
+            const input = document.getElementById('anniversaryInput').value;
+            const correctDate = '16/08/2023';
+            if (input === correctDate) {
+                window.location.href = 'card.html';
+            } 
+            else {
+                document.getElementById('errorMessage').textContent = 'imposter!!! try again or leave';
+            }
+        }
+
+    </script>
+</body>
+</html>

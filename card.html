@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Penyo</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="anniversary">
+            <div class="envelope"></div>
+            <div class="front"></div>
+            <div class="card" onclick="document.getElementById('imageModal').style.display='block'">
+
+                <div class="text">happy<br>two<br>years<br>mi amor !</div>
+                <div class="text2">(click on card)<br></div>
+
+                <div class="heart"></div>
+            </div>
+        </div>
+    </div>
+    <div class="hearts">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+    </div>
+
+    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+        <img src="assets/letter.png" alt="Letter">
+    </div>
+
+    <div class="shadow"></div>
+    <div id="timer" class="timer"></div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
